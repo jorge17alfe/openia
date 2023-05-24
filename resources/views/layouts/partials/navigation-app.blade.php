@@ -21,6 +21,9 @@
                     <x-nav-link :href="route('openai.image')" :active="request()->routeIs('dashboard')">
                         {{ __('Crear imagen') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('openai.example')" :active="request()->routeIs('dashboard')">
+                        {{ __('Crear example') }}
+                    </x-nav-link>
                 </div>
             </div>
 

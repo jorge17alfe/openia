@@ -20,16 +20,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get(
-    '/dashboard',
-    function () {
-        return view('dashboard'
-        // ,[
-        //     'user' =>  ['name'=>"jorge Luis"],
-        // ]
-    );
-    }
-)->middleware(['auth', 'verified'])->name('dashboard');
 
 
 
@@ -45,6 +35,12 @@ Route::middleware('auth')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::get('/chat', [OpenAiController::class, 'chat'])->name('openai.chat');
     Route::get('/image', [OpenAiController::class, 'image'])->name('openai.image');
+    Route::get('/example', [OpenAiController::class, 'example'])->name('openai.example');
+    Route::get('/dashboard',  function () {
+        return view(
+            'openai.dashboard'
+        );
+    })->name('dashboard');
 });
 
 require __DIR__ . '/auth.php';

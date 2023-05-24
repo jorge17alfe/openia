@@ -13,15 +13,11 @@
 
                         <div>
                             {{-- <x-input-label for="image" :value="__('image')" /> --}}
-                            <x-text-input id="image" name="image" type="text" class="mt-1 block w-full" required
-                                autofocus autocomplete="image" />
+                            <x-text-input id="image" name="image" type="text" class="mt-1 block w-full" required  autofocus autocomplete="image" />
                             <x-input-error class="mt-2" :messages="$errors->get('image')" />
+                            <br>
                             <x-input-label for="size" :value="__('Elige tu tamaño')" />
-                            <select name="size" >
-                                <option value="1024x1024" >1024x1024</option>
-                                <option value="512x512"selected>512x512</option>
-                                <option value="256x256">256x256</option>
-                            </select>
+                            <x-input-select />
 
                         </div>
 

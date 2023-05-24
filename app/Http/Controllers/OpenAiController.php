@@ -24,6 +24,12 @@ class OpenAiController extends Controller
       
     }
 
+    public function example():View
+    {
+        return view("openai.create-example");
+      
+    }
+
 
     public function createChat(Request $request)
     {
@@ -46,7 +52,6 @@ class OpenAiController extends Controller
             ]
         );
 
-        // print_r($result ['choices'][0]['message']['content']);
       echo   json_encode($result ['choices'][0]['message']['content']);
       
     }
@@ -67,20 +72,12 @@ class OpenAiController extends Controller
         
         echo json_encode($response->data[0]->url); // 1589478378
         
-        // foreach ($response->data as $data) {
-        //     $data->url; // 'https://oaidalleapiprodscus.blob.core.windows.net/private/...'
-        //     $data->b64_json; // null
-        // }
-        
-        // $response->toArray(); // ['created' => 1589478378, data => ['url' => 'https://oaidalleapiprodscus...', ...]]
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
+
+
+
     public function store(Request $request)
     {
         //
